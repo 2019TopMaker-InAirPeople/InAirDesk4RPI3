@@ -52,3 +52,31 @@ void datetime_view_dtv_previous_button_onclicked_post(void* param, uib_datetime_
 	//Invoked post wrapper function datetime_view_connection_datetime_view_dtv_previous_button_onclicked
 
 }
+/**
+ * @brief the user clicked the button (press/release).
+ *
+ * @param vc It is context of the view that this event occurred on. It has all of UI components that this view consist of.
+ * @param obj It is UI component itself that emits the event signal.
+ * @param event_info
+ * 		event_info is NULL
+ *
+ */
+void datetime_view_ftg_time_button_onclicked(uib_datetime_view_view_context *vc, Evas_Object *obj, void *event_info) {
+	evas_object_show(vc->dtg_time_box);
+	evas_object_hide(vc->dtg_date_box);
+}
+
+/**
+ * @brief the user clicked the button (press/release).
+ *
+ * @param vc It is context of the view that this event occurred on. It has all of UI components that this view consist of.
+ * @param obj It is UI component itself that emits the event signal.
+ * @param event_info
+ * 		event_info is NULL
+ *
+ */
+void datetime_view_ftg_date_button_onclicked(uib_datetime_view_view_context *vc, Evas_Object *obj, void *event_info) {
+	evas_object_show(vc->dtg_date_box);
+	evas_object_hide(vc->dtg_time_box);
+}
+

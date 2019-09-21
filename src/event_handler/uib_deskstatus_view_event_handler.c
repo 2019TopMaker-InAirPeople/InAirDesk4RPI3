@@ -52,3 +52,33 @@ void deskstatus_view_dsv_previous_button_onclicked_post(void* param, uib_desksta
 	//Invoked post wrapper function deskstatus_view_connection_deskstatus_view_dsv_previous_button_onclicked
 
 }
+
+
+/**
+ * @brief the user clicked the button (press/release).
+ *
+ * @param vc It is context of the view that this event occurred on. It has all of UI components that this view consist of.
+ * @param obj It is UI component itself that emits the event signal.
+ * @param event_info
+ * 		event_info is NULL
+ *
+ */
+void deskstatus_view_dsg_away_button_onclicked(uib_deskstatus_view_view_context *vc, Evas_Object *obj, void *event_info) {
+	evas_object_show(vc->dsg_away_box);
+	evas_object_hide(vc->dsg_trip_box);
+}
+
+/**
+ * @brief the user clicked the button (press/release).
+ *
+ * @param vc It is context of the view that this event occurred on. It has all of UI components that this view consist of.
+ * @param obj It is UI component itself that emits the event signal.
+ * @param event_info
+ * 		event_info is NULL
+ *
+ */
+void deskstatus_view_dsg_trip_button_onclicked(uib_deskstatus_view_view_context *vc, Evas_Object *obj, void *event_info) {
+	evas_object_show(vc->dsg_trip_box);
+	evas_object_hide(vc->dsg_away_box);
+}
+

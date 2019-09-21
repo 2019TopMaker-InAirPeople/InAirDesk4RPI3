@@ -4,7 +4,7 @@
 		<configuration device="HD" id="config1" name="common"
 			orientation="portrait" type="common" />
 	</mscreen>
-	<views startup="datetime_view">
+	<views startup="finedust_view">
 
 
 
@@ -76,20 +76,50 @@
 				vsize_h="1000" vsize_w="1000" weight_h="1" weight_v="1">
 				<button align_h="fill" align_v="fill" disable="false"
 					id="dtv_previous_button" pack_h="80" pack_w="800" pack_x="100"
-					pack_y="100" style="bottom" text="Previous" data_bind="" visible="true"
+					pack_y="100" style="bottom" text="책상상태" data_bind="" visible="true"
 					weight_h="1" weight_v="1">
-				<event connection_wrapper="connection_datetime_view_dtv_previous_button_onclicked" function_name="datetime_view_dtv_previous_button_onclicked" signal="clicked" target="deskstatus_view" /></button>
+					<event connection_wrapper="connection_datetime_view_dtv_previous_button_onclicked"
+						function_name="datetime_view_dtv_previous_button_onclicked"
+						signal="clicked" target="deskstatus_view" />
+				</button>
 				<box align_v="fill" visible="true" weight_v="1" pack_h="435"
 					padding_h="0" weight_h="1" homogeneous="false" align_h="fill"
 					pack_w="1000" pack_x="0" pack_y="265" padding_v="0" id="datetime_box"
 					direction="vertical">
-					<label align_h="0.5" wrap_width="0" align_v="0.5" visible="true"
-						weight_v="1" line_wrap="none" id="label1" text="DateTime View"
-						data_bind="" weight_h="1" ellipsis="false"></label>
+					<grid align_h="fill" vsize_w="1000" align_v="fill" visible="true"
+						weight_v="1" id="dtb_grid" weight_h="1" vsize_h="1000">
+						<button align_h="fill" align_v="fill" disable="false"
+							id="ftg_time_button" pack_h="140" pack_w="500" pack_x="0" pack_y="0"
+							style="bottom" text="시간" data_bind="" visible="true" weight_h="1"
+							weight_v="1">
+							<event function_name="datetime_view_ftg_time_button_onclicked"
+								signal="clicked" />
+						</button>
+						<box align_v="fill" visible="true" weight_v="1" pack_h="860"
+							padding_h="0" weight_h="1" homogeneous="false" align_h="fill"
+							pack_w="1000" pack_x="0" pack_y="140" padding_v="0" id="dtg_time_box"
+							direction="vertical">
+							<label id="time_label" text="시간"></label>
+						</box>
+
+						<button align_h="fill" align_v="fill" disable="false"
+							id="ftg_date_button" pack_h="140" pack_w="500" pack_x="500"
+							pack_y="0" style="bottom" text="날짜" data_bind="" visible="true"
+							weight_h="1" weight_v="1">
+							<event function_name="datetime_view_ftg_date_button_onclicked"
+								signal="clicked" />
+						</button>
+						<box align_v="fill" visible="false" weight_v="1" pack_h="860"
+							padding_h="0" weight_h="1" homogeneous="false" align_h="fill"
+							pack_w="1000" pack_x="0" pack_y="140" padding_v="0" id="dtg_date_box"
+							direction="vertical">
+							<label id="date_label" text="날짜"></label>
+						</box>
+					</grid>
 				</box>
 				<button align_h="fill" align_v="fill" disable="false"
 					id="dtv_next_button" pack_h="80" pack_w="800" pack_x="100" pack_y="850"
-					style="bottom" text="Next" data_bind="" visible="true" weight_h="1"
+					style="bottom" text="미세먼지" data_bind="" visible="true" weight_h="1"
 					weight_v="1">
 					<event connection_wrapper="connection_datetime_view_dtv_next_button_onclicked"
 						function_name="datetime_view_dtv_next_button_onclicked" signal="clicked"
@@ -103,7 +133,7 @@
 				vsize_h="1000" vsize_w="1000" weight_h="1" weight_v="1">
 				<button align_h="fill" align_v="fill" disable="false"
 					id="fdv_previous_button" pack_h="80" pack_w="800" pack_x="100"
-					pack_y="100" style="bottom" text="Previous" data_bind="" visible="true"
+					pack_y="100" style="bottom" text="날짜시간" data_bind="" visible="true"
 					weight_h="1" weight_v="1">
 					<event connection_wrapper="connection_finedust_view_fdv_previous_button_onclicked"
 						function_name="finedust_view_fdv_previous_button_onclicked"
@@ -113,13 +143,54 @@
 					padding_h="0" weight_h="1" homogeneous="false" align_h="fill"
 					pack_w="1000" pack_x="0" pack_y="265" padding_v="0" id="finedust_box"
 					direction="vertical">
-					<label align_h="0.5" wrap_width="0" align_v="0.5" visible="true"
-						weight_v="1" line_wrap="none" id="label1" text="FineDust View"
-						data_bind="" weight_h="1" ellipsis="false"></label>
+					<grid align_h="fill" vsize_w="1000" align_v="fill" visible="true"
+						weight_v="1" id="fdb_grid" weight_h="1" vsize_h="1000">
+						<button align_h="fill" align_v="fill" disable="false"
+							id="fdg_outdoor_button" pack_h="140" pack_w="333" pack_x="0"
+							pack_y="0" style="bottom" text="실외" data_bind="" visible="true"
+							weight_h="1" weight_v="1">
+							<event function_name="finedust_view_fdg_outdoor_button_onclicked"
+								signal="clicked" />
+						</button>
+						<box align_v="fill" visible="false" weight_v="1" pack_h="860"
+							padding_h="0" weight_h="1" homogeneous="false" align_h="fill"
+							pack_w="1000" pack_x="0" pack_y="140" padding_v="0" id="fdg_outdoor_box"
+							direction="vertical">
+							<label id="outdoor_label" text="실외"></label>
+						</box>
+
+						<button align_h="fill" align_v="fill" disable="false"
+							id="fdg_indoor_button" pack_h="140" pack_w="333" pack_x="333"
+							pack_y="0" style="bottom" text="실내" data_bind="" visible="true"
+							weight_h="1" weight_v="1">
+							<event function_name="finedust_view_fdg_indoor_button_onclicked"
+								signal="clicked" />
+						</button>
+						<box align_v="fill" visible="true" weight_v="1" pack_h="860"
+							padding_h="0" weight_h="1" homogeneous="false" align_h="fill"
+							pack_w="1000" pack_x="0" pack_y="140" padding_v="0" id="fdg_indoor_box"
+							direction="vertical">
+							<label id="indoor_label" text="실내"></label>
+						</box>
+
+						<button align_h="fill" align_v="fill" disable="false"
+							id="fdg_icon_button" pack_h="140" pack_w="333" pack_x="666"
+							pack_y="0" style="bottom" text="아이콘" data_bind="" visible="true"
+							weight_h="1" weight_v="1">
+							<event function_name="finedust_view_fdg_icon_button_onclicked"
+								signal="clicked" />
+						</button>
+						<box align_v="fill" visible="false" weight_v="1" pack_h="860"
+							padding_h="0" weight_h="1" homogeneous="false" align_h="fill"
+							pack_w="1000" pack_x="0" pack_y="140" padding_v="0" id="fdg_icon_box"
+							direction="vertical">
+							<label id="icon_label" text="아이콘"></label>
+						</box>
+					</grid>
 				</box>
 				<button align_h="fill" align_v="fill" disable="false"
 					id="fdv_next_button" pack_h="80" pack_w="800" pack_x="100" pack_y="850"
-					style="bottom" text="Next" data_bind="" visible="true" weight_h="1"
+					style="bottom" text="책상상태" data_bind="" visible="true" weight_h="1"
 					weight_v="1">
 					<event connection_wrapper="connection_finedust_view_fdv_next_button_onclicked"
 						function_name="finedust_view_fdv_next_button_onclicked" signal="clicked"
@@ -133,7 +204,7 @@
 				visible="true" vsize_h="1000" vsize_w="1000" weight_h="1" weight_v="1">
 				<button align_h="fill" align_v="fill" disable="false"
 					id="dsv_previous_button" pack_h="80" pack_w="800" pack_x="100"
-					pack_y="100" style="bottom" text="Previous" data_bind="" visible="true"
+					pack_y="100" style="bottom" text="미세먼지" data_bind="" visible="true"
 					weight_h="1" weight_v="1">
 					<event connection_wrapper="connection_deskstatus_view_dsv_previous_button_onclicked"
 						function_name="deskstatus_view_dsv_previous_button_onclicked"
@@ -143,13 +214,40 @@
 					padding_h="0" weight_h="1" homogeneous="false" align_h="fill"
 					pack_w="1000" pack_x="0" pack_y="265" padding_v="0" id="deskstatus_box"
 					direction="vertical">
-					<label align_h="0.5" wrap_width="0" align_v="0.5" visible="true"
-						weight_v="1" line_wrap="none" id="label1" text="DeskStatus View"
-						data_bind="" weight_h="1" ellipsis="false"></label>
+					<grid align_h="fill" vsize_w="1000" align_v="fill" visible="true"
+						weight_v="1" id="dsb_grid" weight_h="1" vsize_h="1000">
+						<button align_h="fill" align_v="fill" disable="false"
+							id="dsg_away_button" pack_h="140" pack_w="500" pack_x="0" pack_y="0"
+							style="bottom" text="자리비움" data_bind="" visible="true" weight_h="1"
+							weight_v="1">
+							<event function_name="deskstatus_view_dsg_away_button_onclicked"
+								signal="clicked" />
+						</button>
+						<box align_v="fill" visible="true" weight_v="1" pack_h="860"
+							padding_h="0" weight_h="1" homogeneous="false" align_h="fill"
+							pack_w="1000" pack_x="0" pack_y="140" padding_v="0" id="dsg_away_box"
+							direction="vertical">
+							<label id="away_label" text="자리비움"></label>
+						</box>
+
+						<button align_h="fill" align_v="fill" disable="false"
+							id="dsg_trip_button" pack_h="140" pack_w="500" pack_x="500"
+							pack_y="0" style="bottom" text="출장중" data_bind="" visible="true"
+							weight_h="1" weight_v="1">
+							<event function_name="deskstatus_view_dsg_trip_button_onclicked"
+								signal="clicked" />
+						</button>
+						<box align_v="fill" visible="false" weight_v="1" pack_h="860"
+							padding_h="0" weight_h="1" homogeneous="false" align_h="fill"
+							pack_w="1000" pack_x="0" pack_y="140" padding_v="0" id="dsg_trip_box"
+							direction="vertical">
+							<label id="trip_label" text="출장중"></label>
+						</box>
+					</grid>
 				</box>
 				<button align_h="fill" align_v="fill" disable="false"
 					id="dsv_next_button" pack_h="80" pack_w="800" pack_x="100" pack_y="850"
-					style="bottom" text="Next" data_bind="" visible="true" weight_h="1"
+					style="bottom" text="날짜시간" data_bind="" visible="true" weight_h="1"
 					weight_v="1">
 					<event connection_wrapper="connection_deskstatus_view_dsv_next_button_onclicked"
 						function_name="deskstatus_view_dsv_next_button_onclicked" signal="clicked"

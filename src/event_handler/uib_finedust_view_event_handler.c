@@ -52,3 +52,48 @@ void finedust_view_fdv_previous_button_onclicked_post(void* param, uib_finedust_
 	//Invoked post wrapper function finedust_view_connection_finedust_view_fdv_previous_button_onclicked
 
 }
+/**
+ * @brief the user clicked the button (press/release).
+ *
+ * @param vc It is context of the view that this event occurred on. It has all of UI components that this view consist of.
+ * @param obj It is UI component itself that emits the event signal.
+ * @param event_info
+ * 		event_info is NULL
+ *
+ */
+void finedust_view_fdg_outdoor_button_onclicked(uib_finedust_view_view_context *vc, Evas_Object *obj, void *event_info) {
+	evas_object_show(vc->fdg_outdoor_box);
+	evas_object_hide(vc->fdg_indoor_box);
+	evas_object_hide(vc->fdg_icon_box);
+}
+
+/**
+ * @brief the user clicked the button (press/release).
+ *
+ * @param vc It is context of the view that this event occurred on. It has all of UI components that this view consist of.
+ * @param obj It is UI component itself that emits the event signal.
+ * @param event_info
+ * 		event_info is NULL
+ *
+ */
+void finedust_view_fdg_indoor_button_onclicked(uib_finedust_view_view_context *vc, Evas_Object *obj, void *event_info) {
+	evas_object_show(vc->fdg_indoor_box);
+	evas_object_hide(vc->fdg_outdoor_box);
+	evas_object_hide(vc->fdg_icon_box);
+}
+
+/**
+ * @brief the user clicked the button (press/release).
+ *
+ * @param vc It is context of the view that this event occurred on. It has all of UI components that this view consist of.
+ * @param obj It is UI component itself that emits the event signal.
+ * @param event_info
+ * 		event_info is NULL
+ *
+ */
+void finedust_view_fdg_icon_button_onclicked(uib_finedust_view_view_context *vc, Evas_Object *obj, void *event_info) {
+	evas_object_show(vc->fdg_icon_box);
+	evas_object_hide(vc->fdg_indoor_box);
+	evas_object_hide(vc->fdg_outdoor_box);
+}
+
