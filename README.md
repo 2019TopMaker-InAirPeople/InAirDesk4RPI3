@@ -23,5 +23,8 @@
 * Tizen IoT-headed 개발보드(Raspberry Pi 3 Model B+) : UI 구현, https://github.com/InAirPeople-Inc/InAirDesk4RPI3.git
 
 ## 구현사항
-* User Interface
+* 프로토콜 사용하지 않음
+* 클라우드 사용하지 않음
+* 카메라 사용하지 않음
+* 이미지 분석 사용하지 않음
   
